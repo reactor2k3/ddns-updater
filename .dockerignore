@@ -1,0 +1,16 @@
+**/.git
+.github
+docs
+readme/*
+!readme/*.go
+scripts
+data
+.local-data
+.tools
+.env*
+*.zip
+*.exe
+config.json
+auth.json
+.setup-key
+docker-compose.yml

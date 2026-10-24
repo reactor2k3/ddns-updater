@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#e3edf7" />
+    <title>DDNS Updater · Zugang</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="__ROOT__/auth-assets/mark.svg"
+    />
+    <link rel="stylesheet" href="__ROOT__/auth-assets/auth.css" />
+    <script defer src="__ROOT__/auth-assets/auth.js"></script>
+  </head>
+  <body data-root="__ROOT__">
+    <header class="auth-top">
+      <a class="auth-brand" href="__ROOT__/"
+        ><img
+          src="__ROOT__/auth-assets/mark.svg"
+          alt=""
+          width="32"
+          height="32"
+        /><span>ddns<span>updater</span></span></a
+      >
+      <div class="auth-controls">
+        <label class="language"
+          ><span id="flag" aria-hidden="true"></span
+          ><select id="language" aria-label="Sprache / Language">
+            <option value="auto">System</option>
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+          </select></label
+        ><button
+          class="icon-button"
+          id="theme"
+          type="button"
+          aria-label="Darstellung wechseln"
+        >
+          ◐
+        </button>
+      </div>
+    </header>
+    <main id="auth-main" class="auth-main" aria-live="polite">
+      <p class="loading">Verbindung wird hergestellt …</p>
+    </main>
+    <footer class="auth-footer">
+      <span>DDNS Updater</span><span id="footer-note"></span>
+    </footer>
+  </body>
+</html>

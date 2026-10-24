@@ -1,0 +1,25 @@
+services:
+  ddns-updater:
+    hostname: ddns-updater
+    image: ghcr.io/reactor2k3/ddns-updater:latest
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      # Exact browser URL. WEB_HOST must be your Docker host's private LAN IP.
+      AUTH_ORIGIN: ${AUTH_ORIGIN:-http://${WEB_HOST:?Set WEB_HOST to your Docker host private LAN IP}:${WEB_PORT:-8095}}
+      LISTENING_ADDRESS: 0.0.0.0:${WEB_PORT:-8095}
+      # HTTP is enabled for private LAN IPs. Passkeys require trusted HTTPS.
+      AUTH_ALLOW_INSECURE_HTTP: ${AUTH_ALLOW_INSECURE_HTTP:-true}
+      DATADIR: /updater/data
+      CONFIG_FILEPATH: /updater/data/config.json
+      PERIOD: 5m
+      UPDATE_COOLDOWN_PERIOD: 5m
+    volumes:
+      - ddns-data:/updater/data
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  ddns-data:

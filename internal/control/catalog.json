@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "aliyun",
+    "name": "Aliyun",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Aliyun. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/aliyun.md",
+    "fields": [
+      {
+        "key": "access_key_id",
+        "label": "Access-Key-ID",
+        "example": "demo-access-key-id",
+        "help": "Die Kennung deines API-Zugangs. Sie gehört zum nachfolgenden geheimen Schlüssel.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "access_secret",
+        "label": "Geheimer Access-Key",
+        "example": "demo-access-secret",
+        "help": "Der geheime Teil deines API-Zugangs.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "allinkl",
+    "name": "ALL-INKL",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei ALL-INKL. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/allinkl.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "DynDNS-Benutzername",
+        "example": "dyn1234567",
+        "help": "Der DynDNS-Benutzername aus dem ALL-INKL-Kundenbereich, häufig mit „dyn“ am Anfang.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "bunny",
+    "name": "Bunny",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Bunny. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/bunny.md",
+    "fields": [
+      {
+        "key": "api_key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Den API-Schlüssel findest oder erstellst du im Kundenbereich deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "changeip",
+    "name": "ChangeIP",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei ChangeIP. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/changeip.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die Domain in Cloudflare und kopiere ihre Zonen-ID. Erstelle ein API-Token mit DNS-Bearbeitungsrechten für diese Zone. Diese Vorlage verwendet die Anmeldung per API-Token.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/cloudflare.md",
+    "fields": [
+      {
+        "key": "zone_identifier",
+        "label": "DNS-Zonen-ID",
+        "example": "0123456789abcdef0123456789abcdef",
+        "help": "Die Zonen-ID steht in der Domainübersicht deines Anbieters. Sie ist nicht der Domainname.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 600
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "custom",
+    "name": "Eigener Update-Dienst",
+    "domainExample": "home.example.com",
+    "guide": "Für einen eigenen kompatiblen Update-Dienst. Übernimm die URL und Parameternamen aus dessen Dokumentation. Diese Vorlage ist für fortgeschrittene Nutzer gedacht.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/custom.md",
+    "fields": [
+      {
+        "key": "url",
+        "label": "Update-Adresse",
+        "example": "https://ddns.example.com/update?hostname=home.example.com",
+        "help": "Die Update-URL deines eigenen Dienstes. Die IP-Adresse fügt der Updater hinzu.",
+        "type": "url",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ipv4key",
+        "label": "Parametername für IPv4",
+        "example": "ipv4",
+        "help": "Wie heißt der IPv4-Parameter in deiner Update-URL? Der Name hängt von deinem Dienst ab.",
+        "type": "text",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "ipv6key",
+        "label": "Parametername für IPv6",
+        "example": "ipv6",
+        "help": "Wie heißt der IPv6-Parameter in deiner Update-URL? Der Name hängt von deinem Dienst ab.",
+        "type": "text",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "success_regex",
+        "label": "Erfolgsantwort erkennen",
+        "example": "good",
+        "help": "Ein Textmuster, das in einer erfolgreichen Serverantwort vorkommt.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dd24",
+    "name": "Domain Discount 24",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Domain Discount 24. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dd24.md",
+    "fields": [
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "ddnss",
+    "name": "DDNSS.de",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DDNSS.de. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/ddnss.de.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "dual_stack",
+        "label": "Beide IP-Versionen verwenden",
+        "example": false,
+        "help": "Diese zusätzliche Option ist speziell für DDNSS.de vorgesehen.",
+        "type": "checkbox",
+        "required": false,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "desec",
+    "name": "deSEC",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei deSEC. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/desec.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DigitalOcean. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/digitalocean.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dnsomatic",
+    "name": "DNS-O-Matic",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DNS-O-Matic. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dnsomatic.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dnspod",
+    "name": "DNSPod",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DNSPod. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dnspod.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "domeneshop",
+    "name": "Domeneshop",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Domeneshop. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/domeneshop.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "secret",
+        "label": "Geheimer API-Schlüssel",
+        "example": "demo-secret-nicht-echt",
+        "help": "Der geheime zweite Teil deiner API-Zugangsdaten.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dondominio",
+    "name": "DonDominio",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DonDominio. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dondominio.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dreamhost",
+    "name": "DreamHost",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DreamHost. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dreamhost.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "duckdns",
+    "name": "DuckDNS",
+    "domainExample": "mein-zuhause.duckdns.org",
+    "guide": "Lege bei DuckDNS eine Subdomain an. Kopiere anschließend das Token oben aus deinem DuckDNS-Konto. Der vollständige Hostname endet auf .duckdns.org.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/duckdns.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "DuckDNS-Token",
+        "example": "00000000-0000-0000-0000-000000000000",
+        "help": "Das Token steht oben auf der DuckDNS-Kontoseite. Es ist nicht der Name deiner Subdomain.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dyn",
+    "name": "DynDNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DynDNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dyndns.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "client_key",
+        "label": "Client-Schlüssel",
+        "example": "demo-client-key",
+        "help": "Verwende den Client-Schlüssel deines DynDNS-Zugangs.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dynu",
+    "name": "Dynu",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Dynu. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dynu.md",
+    "fields": [
+      {
+        "key": "group",
+        "label": "Dynu-Gruppe",
+        "example": "homelab",
+        "help": "Nur ausfüllen, wenn du deine Hosts bei Dynu in einer Gruppe organisiert hast.",
+        "type": "text",
+        "required": false,
+        "default": ""
+      },
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "dynv6",
+    "name": "DynV6",
+    "domainExample": "mein-zuhause.dynv6.net",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei DynV6. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/dynv6.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "easydns",
+    "name": "EasyDNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei EasyDNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/easydns.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "freedns",
+    "name": "FreeDNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei FreeDNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/freedns.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "gandi",
+    "name": "Gandi",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Gandi. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/gandi.md",
+    "fields": [
+      {
+        "key": "personal_access_token",
+        "label": "Persönliches API-Token",
+        "example": "demo-personal-access-token",
+        "help": "Erstelle ein persönliches Token für den Zugriff auf deine DNS-Einträge.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 3600
+      }
+    ]
+  },
+  {
+    "id": "gcp",
+    "name": "Google Cloud DNS",
+    "domainExample": "home.example.com",
+    "guide": "Wähle das richtige Google-Cloud-Projekt und die Cloud-DNS-Zone. Erstelle einen Service-Account mit den nötigen DNS-Rechten und lade seine JSON-Schlüsseldatei herunter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/gcp.md",
+    "fields": [
+      {
+        "key": "project",
+        "label": "Google-Cloud-Projekt-ID",
+        "example": "mein-homelab-projekt",
+        "help": "Die Projekt-ID aus Google Cloud, nicht der frei gewählte Anzeigename.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "zone",
+        "label": "DNS-Zonenname",
+        "example": "meine-dns-zone",
+        "help": "Der Name der verwalteten Zone unter Cloud DNS.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "credentials",
+        "label": "Service-Account als JSON",
+        "example": "{\"type\":\"service_account\",\"project_id\":\"mein-homelab-projekt\",\"client_email\":\"ddns@mein-homelab-projekt.iam.gserviceaccount.com\",\"private_key\":\"DEMO-NICHT-ECHT\"}",
+        "help": "Füge den vollständigen Inhalt der heruntergeladenen JSON-Schlüsseldatei ein. Die Datei enthält geheime Zugangsdaten.",
+        "type": "textarea",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "gigahostno",
+    "name": "Gigahost.no",
+    "domainExample": "home.example.no",
+    "guide": "Diese Vorlage verwendet den empfohlenen API-Schlüssel aus deinem Gigahost-Konto. Deine Domain muss Gigahost als DNS-Anbieter verwenden.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/gigahostno.md",
+    "fields": [
+      {
+        "key": "apikey",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Den API-Schlüssel findest oder erstellst du im Kundenbereich deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "godaddy",
+    "name": "GoDaddy",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei GoDaddy. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/godaddy.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "secret",
+        "label": "Geheimer API-Schlüssel",
+        "example": "demo-secret-nicht-echt",
+        "help": "Der geheime zweite Teil deiner API-Zugangsdaten.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "goip",
+    "name": "GoIP.de",
+    "domainExample": "mein-zuhause.goip.de",
+    "guide": "Verwende einen Host unter goip.de oder goip.it und die Zugangsdaten des Router-Accounts unter „Routers“.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/goip.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "he",
+    "name": "Hurricane Electric",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Hurricane Electric. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/he.net.md",
+    "fields": [
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "hetzner",
+    "name": "Hetzner",
+    "domainExample": "home.example.com",
+    "guide": "Diese Vorlage verwendet die ältere Hetzner-DNS-API. Für eine Neueinrichtung empfiehlt die Projektdokumentation den Anbieter „Hetzner Cloud“.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/hetzner.md",
+    "fields": [
+      {
+        "key": "zone_identifier",
+        "label": "DNS-Zonen-ID",
+        "example": "0123456789abcdef0123456789abcdef",
+        "help": "Die Zonen-ID steht in der Domainübersicht deines Anbieters. Sie ist nicht der Domainname.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 600
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "hetznercloud",
+    "name": "Hetzner Cloud",
+    "domainExample": "home.example.com",
+    "guide": "Verwende ein API-Token mit DNS-Schreibrechten aus der Hetzner Cloud Console. Deine DNS-Zone muss dort verwaltet werden.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/hetznercloud.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "hostinger",
+    "name": "Hostinger",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Hostinger. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/hostinger.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 300
+      }
+    ]
+  },
+  {
+    "id": "infomaniak",
+    "name": "Infomaniak",
+    "domainExample": "home.example.com",
+    "guide": "Verwende die Zugangsdaten des DynDNS-Benutzers. Die Zugangsdaten deines normalen Infomaniak-Admin-Kontos sind hierfür nicht geeignet.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/infomaniak.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "inwx",
+    "name": "INWX",
+    "domainExample": "home.example.com",
+    "guide": "Lege zuerst bei INWX einen DynDNS-Account mit Hostname an. Trage hier genau dessen Benutzernamen und Passwort ein.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/inwx.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "ionos",
+    "name": "IONOS",
+    "domainExample": "home.example.com",
+    "guide": "Erstelle einen API-Schlüssel im IONOS-Konto. Trage ihn vollständig als Präfix.Schlüssel ein, einschließlich des Punkts.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/ionos.md",
+    "fields": [
+      {
+        "key": "api_key",
+        "label": "IONOS API-Schlüssel",
+        "example": "demo-praefix.demo-schluessel",
+        "help": "Präfix und Schlüssel zusammen eintragen und mit einem Punkt trennen.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "ipv64",
+    "name": "IPv64",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei IPv64. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/ipv64.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "linode",
+    "name": "Linode",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Linode. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/linode.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "loopia",
+    "name": "Loopia",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Loopia. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/loopia.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "luadns",
+    "name": "LuaDNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei LuaDNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/luadns.md",
+    "fields": [
+      {
+        "key": "email",
+        "label": "E-Mail-Adresse",
+        "example": "du@example.com",
+        "help": "Die E-Mail-Adresse deines Kontos bei diesem Anbieter.",
+        "type": "email",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "myaddr",
+    "name": "Myaddr",
+    "domainExample": "mein-zuhause.myaddr.tools",
+    "guide": "Trage genau eine Domain unter myaddr.tools ein. Der private Schlüssel aktualisiert die zugehörigen Einträge und Subdomains.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/myaddr.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "Privater Domain-Schlüssel",
+        "example": "demo-private-key",
+        "help": "Der private Schlüssel, der zu deiner Domain bei myaddr.tools gehört.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "name.com",
+    "name": "Name.com",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Name.com. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/name.com.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 300
+      }
+    ]
+  },
+  {
+    "id": "namecheap",
+    "name": "Namecheap",
+    "domainExample": "home.example.com",
+    "guide": "Aktiviere Dynamic DNS für die Domain bei Namecheap. Verwende das dort angezeigte Dynamic-DNS-Passwort.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/namecheap.md",
+    "fields": [
+      {
+        "key": "password",
+        "label": "Dynamic-DNS-Passwort",
+        "example": "demo-dynamic-dns-passwort",
+        "help": "Das Passwort aus der Dynamic-DNS-Verwaltung von Namecheap.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "namesilo",
+    "name": "NameSilo",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei NameSilo. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/namesilo.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 7207
+      }
+    ]
+  },
+  {
+    "id": "netcup",
+    "name": "Netcup",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die API-Verwaltung im Customer Control Panel. Du brauchst Kundennummer, API-Key und API-Passwort. Das API-Passwort ist nicht dein Konto-Passwort.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/netcup.md",
+    "fields": [
+      {
+        "key": "api_key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Den API-Schlüssel findest oder erstellst du im Kundenbereich deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "API-Passwort",
+        "example": "demo-api-passwort",
+        "help": "Das API-Passwort aus dem Customer Control Panel. Nicht dein Login-Passwort.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "customer_number",
+        "label": "Kundennummer",
+        "example": "123456",
+        "help": "Deine Kundennummer aus dem Kundenbereich. Nicht die Vertragsnummer.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "njalla",
+    "name": "Njalla",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Njalla. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/njalla.md",
+    "fields": [
+      {
+        "key": "key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Übernimm den Schlüssel für diesen DNS-Zugang aus deinem Anbieter-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "noip",
+    "name": "No-IP",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei No-IP. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/noip.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "nowdns",
+    "name": "Now-DNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Now-DNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/nowdns.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "E-Mail-Adresse",
+        "example": "du@example.com",
+        "help": "Verwende die E-Mail-Adresse deines Now-DNS-Kontos.",
+        "type": "email",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "opendns",
+    "name": "OpenDNS",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei OpenDNS. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/opendns.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "ovh",
+    "name": "OVH",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei OVH. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/ovh.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "porkbun",
+    "name": "Porkbun",
+    "domainExample": "home.example.com",
+    "guide": "Erstelle ein API-Schlüsselpaar und aktiviere API ACCESS für die Domain in der Domainverwaltung.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/porkbun.md",
+    "fields": [
+      {
+        "key": "api_key",
+        "label": "API-Schlüssel",
+        "example": "pk1_demo_nicht_echt",
+        "help": "Der API-Schlüssel mit Präfix pk1_ aus deinem Porkbun-Konto.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "secret_api_key",
+        "label": "Geheimer API-Schlüssel",
+        "example": "sk1_demo_nicht_echt",
+        "help": "Den geheimen API-Schlüssel findest du zusammen mit dem öffentlichen API-Schlüssel.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "route53",
+    "name": "Amazon Route 53",
+    "domainExample": "home.example.com",
+    "guide": "Du brauchst einen AWS-Zugang mit passenden DNS-Rechten und die Hosted-Zone-ID der Domain. Verwende den vorgesehenen API-Zugang.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/route53.md",
+    "fields": [
+      {
+        "key": "access_key",
+        "label": "AWS Access-Key-ID",
+        "example": "AKIADEMO000000000000",
+        "help": "Die Access-Key-ID des AWS-Zugangs mit Berechtigung für deine DNS-Zone.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "secret_key",
+        "label": "Geheimer Schlüssel",
+        "example": "demo-secret-key-nicht-echt",
+        "help": "Der geheime Schlüssel für den API-Zugang bei deinem Anbieter.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "zone_id",
+        "label": "Hosted-Zone-ID",
+        "example": "Z0123456789DEMO",
+        "help": "Die Kennung deiner Hosted Zone in Amazon Route 53.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 300
+      }
+    ]
+  },
+  {
+    "id": "scaleway",
+    "name": "Scaleway",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Scaleway. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/scaleway.md",
+    "fields": [
+      {
+        "key": "secret_key",
+        "label": "Geheimer Schlüssel",
+        "example": "demo-secret-key-nicht-echt",
+        "help": "Der geheime Schlüssel für den API-Zugang bei deinem Anbieter.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "selfhost.de",
+    "name": "Selfhost.de",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Selfhost.de. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/selfhost.de.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "servercow",
+    "name": "Servercow",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Servercow. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/servercow.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 600
+      }
+    ]
+  },
+  {
+    "id": "spaceship",
+    "name": "Spaceship",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Spaceship. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/spaceship.md",
+    "fields": [
+      {
+        "key": "api_key",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Den API-Schlüssel findest oder erstellst du im Kundenbereich deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "api_secret",
+        "label": "API-Secret",
+        "example": "demo-secret-nicht-echt",
+        "help": "Der geheime Schlüssel, der zu deinem API-Schlüssel gehört.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "spdyn",
+    "name": "spdyn.de",
+    "domainExample": "home.example.com",
+    "guide": "Diese einfache Vorlage verwendet ein Update-Token. Erstelle ein Token für den gewünschten Host. Benutzername und Passwort werden bei dieser Methode nicht benötigt.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/spdyn.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "Update-Token",
+        "example": "demo-update-token",
+        "help": "Das Update-Token für deinen Host bei spdyn.de.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "strato",
+    "name": "Strato",
+    "domainExample": "home.example.com",
+    "guide": "Aktiviere DynDNS für die Domain und verwende das zugehörige DynDNS-Passwort.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/strato.md",
+    "fields": [
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "variomedia",
+    "name": "Variomedia",
+    "domainExample": "home.example.com",
+    "guide": "Verwende deine E-Mail-Adresse und das Passwort für DNS-Einstellungen. Das Passwort deines normalen Kundenkontos ist dafür nicht vorgesehen.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/variomedia.md",
+    "fields": [
+      {
+        "key": "email",
+        "label": "E-Mail-Adresse",
+        "example": "du@example.com",
+        "help": "Die E-Mail-Adresse deines Kontos bei diesem Anbieter.",
+        "type": "email",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "password",
+        "label": "Passwort",
+        "example": "demo-passwort-nicht-echt",
+        "help": "Das für DNS-Updates vorgesehene Passwort deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Vercel. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/vercel.md",
+    "fields": [
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "team_id",
+        "label": "Vercel-Team-ID",
+        "example": "team_demo123",
+        "help": "Nur für eine Domain in einem Team. Für dein persönliches Konto leer lassen.",
+        "type": "text",
+        "required": false,
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "vultr",
+    "name": "Vultr",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Vultr. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/vultr.md",
+    "fields": [
+      {
+        "key": "apikey",
+        "label": "API-Schlüssel",
+        "example": "demo-api-schluessel",
+        "help": "Den API-Schlüssel findest oder erstellst du im Kundenbereich deines Anbieters.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "ttl",
+        "label": "DNS-Gültigkeitsdauer in Sekunden",
+        "example": "600",
+        "help": "600 Sekunden sind 10 Minuten. Diese Zeit dürfen DNS-Server eine Antwort zwischenspeichern.",
+        "type": "number",
+        "required": false,
+        "default": 300
+      }
+    ]
+  },
+  {
+    "id": "zoneedit",
+    "name": "Zoneedit",
+    "domainExample": "home.example.com",
+    "guide": "Öffne die DNS- oder DynDNS-Verwaltung bei Zoneedit. Richte dort deinen Host ein und halte die unten aufgeführten Zugangsdaten bereit. Die Anleitung zeigt die Schritte für diesen Anbieter.",
+    "docs": "https://github.com/reactor2k3/ddns-updater/blob/main/docs/zoneedit.md",
+    "fields": [
+      {
+        "key": "username",
+        "label": "Benutzername",
+        "example": "mein-dyndns-benutzer",
+        "help": "Verwende den Benutzernamen für den DNS- oder DynDNS-Zugang bei deinem Anbieter.",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "key": "token",
+        "label": "API-Token",
+        "example": "demo-token-nicht-echt",
+        "help": "Ein Token ist ein Zugangsschlüssel. Er erlaubt dem Updater, deinen DNS-Eintrag zu ändern.",
+        "type": "password",
+        "required": true,
+        "default": ""
+      }
+    ]
+  }
+]

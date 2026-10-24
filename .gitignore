@@ -1,0 +1,11 @@
+/data/
+/.local-data/
+/.tools/
+/.env
+/.env.*
+!/.env.example
+/auth.json
+/.setup-key
+/*.exe
+/*.zip
+/coverage.txt

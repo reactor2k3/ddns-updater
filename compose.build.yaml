@@ -1,0 +1,22 @@
+services:
+  ddns-updater:
+    # Builds this fork, including its authenticated management interface.
+    build: .
+    image: ghcr.io/reactor2k3/ddns-updater:local
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      AUTH_ORIGIN: ${AUTH_ORIGIN:-http://localhost:8000}
+      PERIOD: 5m
+      UPDATE_COOLDOWN_PERIOD: 5m
+      DATADIR: /updater/data
+      CONFIG_FILEPATH: /updater/data/config.json
+    volumes:
+      - ddns-data:/updater/data
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  ddns-data:
